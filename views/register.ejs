@@ -1,0 +1,56 @@
+    <%- include('partials/header') %>
+
+    <div class="container mt-5">
+      <h1>Register</h1>
+
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="card" style="background-color: rgba(255, 255, 255, 0.7); border-radius: 15px; padding: 20px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);">
+            <div class="card-body">
+
+              <!-- Makes POST request to /login route -->
+              <form action="/register" method="POST">
+                <div class="form-group">
+                  
+                  <label for="email" style="color: #fff;">Email</label>
+                  <input type="email" class="form-control" name="username" style="border-radius: 25px; border: 2px solid #fff; padding: 15px; background-color: rgba(255, 255, 255, 0.7); font-size: 1.2rem; color: #333;">
+                </div>
+                <div class="form-group">
+                  <label for="password" style="color: #fff;">Password</label>
+                  <input type="password" class="form-control" name="password" style="border-radius: 25px; border: 2px solid #fff; padding: 15px; background-color: rgba(255, 255, 255, 0.7); font-size: 1.2rem; color: #333;">
+                </div>
+                <div class="form-group">
+                  <label for="pho_no" style="color: #fff;">Mob.no</label>
+                  <input type="number" class="form-control" name="pho_no" style="border-radius: 25px; border: 2px solid #fff; padding: 15px; background-color: rgba(255, 255, 255, 0.7); font-size: 1.2rem; color: #333;">
+                </div>
+                
+                <!-- Gender Dropdown -->
+                <div class="form-group">
+                  <label for="gender" style="color: #fff;">Gender</label>
+                  <select class="form-control" name="gender" style="border-radius: 25px; border: 2px solid #fff; padding: 15px; background-color: rgba(255, 255, 255, 0.7); font-size: 1.2rem; color: #333;">
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <!-- Age Input with Placeholder -->
+                <div class="form-group">
+                  <label for="age" style="color: #fff;">Age</label>
+                  <input type="number" class="form-control" name="age" placeholder="Enter your age" style="border-radius: 25px; border: 2px solid #fff; padding: 15px; background-color: rgba(255, 255, 255, 0.7); font-size: 1.2rem; color: #333;">
+                </div>
+
+                <br />
+                <button type="submit" class="btn btn-orange">Register</button>
+              </form>
+
+              <!-- Forgot password link -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include('partials/footer') %>

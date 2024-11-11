@@ -1,0 +1,73 @@
+<%- include('partials/header') %>
+
+<div class="jumbotron centered">
+  <div class="container">
+    <img src="/images/Aura Assist.png" alt="Aura Assist" height="200px"/>
+    <h1 class="display-3">Aura Assist</h1>
+    <p class="lead">How Can I Help You?</p>
+    <hr>
+
+    <!-- Chatbot Interface -->
+    <div id="chat-container">
+      <div id="chatbox">
+        <!-- Chat messages will appear here -->
+      </div>
+      <div class="new_flex">
+      <textarea id="user-input" placeholder="Type your message here..."></textarea>
+      <n>
+  
+      </n>
+      <button id="send-btn" class="btn btn-dark btn-lg">Send</button></div>
+    </div>
+    </div>
+  </div>
+</div>
+<!-- Inside your existing template -->
+<script>
+  document.getElementById("send-btn").addEventListener("click", function() {
+    const userInput = document.getElementById("user-input").value.trim();
+    if (userInput !== "") {
+      addMessageToChatbox("You", userInput);
+      document.getElementById("user-input").value = ""; // Clear the input field
+
+      // Send the user input to the server via fetch POST request
+      fetch('/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ message: userInput })
+      })
+      .then(response => response.json())
+      .then(data => {
+        // Check if there's a valid reply from the server
+        if (data.reply) {
+          addMessageToChatbox("Aura Assist", data.reply);
+        } else {
+          addMessageToChatbox("Aura Assist", "Sorry, I couldn't understand that.");
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        addMessageToChatbox("Aura Assist", "An error occurred. Please try again.");
+      });
+    }
+  });
+
+  // Function to add a new message to the chatbox
+  function addMessageToChatbox(sender, message) {
+    const chatbox = document.getElementById("chatbox");
+    const messageElement = document.createElement("div");
+    messageElement.classList.add("chat-message");
+    messageElement.innerHTML = `<strong>${sender}:</strong> ${message}`;
+    chatbox.appendChild(messageElement);
+
+    // Auto-scroll to the bottom of the chatbox
+    chatbox.scrollTop = chatbox.scrollHeight;
+  }
+</script>
+
+
+
+<%- include('partials/footer') %>
+  

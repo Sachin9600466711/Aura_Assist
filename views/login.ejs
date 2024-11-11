@@ -1,0 +1,32 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5">
+  <h1>Login</h1>
+
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card" style="background-color: rgba(255, 255, 255, 0.7); border-radius: 15px; padding: 20px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);">
+        <div class="card-body">
+
+          <!-- Makes POST request to /login route -->
+          <form action="/login" method="POST">
+            <div class="form-group">
+              <label for="email" style="color: #fff;">Email</label>
+              <input type="email" class="form-control" name="username" style="border-radius: 25px; border: 2px solid #fff; padding: 15px; background-color: rgba(255, 255, 255, 0.7); font-size: 1.2rem; color: #333;">
+            </div>
+            <div class="form-group">
+              <label for="password" style="color: #fff;">Password</label>
+              <input type="password" class="form-control" name="password" style="border-radius: 25px; border: 2px solid #fff; padding: 15px; background-color: rgba(255, 255, 255, 0.7); font-size: 1.2rem; color: #333;">
+            </div>
+            <button type="submit" class="btn btn-orange">Login</button>
+          </form>
+
+          <!-- Forgot password link -->
+          <a href="/forgot" style="color: #fff; margin-left: 400px; display: inline-block; margin-top: 10px;">Forgot password?</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

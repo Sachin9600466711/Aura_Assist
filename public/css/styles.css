@@ -1,0 +1,160 @@
+body {
+  background-image: url("../images/aura\ bg.jpg"); /* Use the correct path for the image */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; /* Ensures the background covers the entire screen */
+  background-attachment: fixed; /* Fixes the background while scrolling */
+  color: #fff; /* White text for contrast against the background */
+  font-family: 'Arial', sans-serif; /* Clean font for readability */
+}
+
+.centered {
+  padding-top: 150px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay to improve text contrast */
+  color: #ffffff; /* White text for readability */
+  font-weight: bold;
+  border-radius: 20px;
+  padding: 40px;
+  margin: 0 auto;
+  max-width: 700px; /* Center the content and constrain width */
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7); /* Shadow for depth */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("/images/Aura_Assist-removebg-preview.png");  
+  background-position: center;
+}
+
+.new_flex {
+  display: block;
+  margin-bottom: 20px; /* Increased space for better layout */
+}
+
+#user-input, #language-input {
+  border-radius: 25px; /* Rounded corners for smoother appearance */
+  border: 2px solid #ffffff; /* White border to match the theme */
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.7); /* Transparent white background */
+  font-size: 1.2rem; /* Slightly larger font for inputs */
+  color: #333; /* Dark gray text for better readability */
+  width: auto;
+  box-sizing: border-box;
+  min-height: 60px;
+}
+
+#user-input::placeholder, #language-input::placeholder {
+  color: #777; /* Lighter gray for placeholder text */
+  font-style: italic;
+}
+
+img {
+  border-radius: 50px;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5); /* White shadow effect */
+  width: auto; /* Constraint image size */
+  margin-bottom: 20px; /* Adds space below image */
+}
+
+#send-btn {
+  width: auto;
+  padding: 15px;
+  background-color: #ff6600; /* Bright orange button for contrast */
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.3rem; /* Larger button text */
+  transition: background-color 0.3s ease;
+  cursor: pointer; /* Indicates clickable button */
+}
+
+#send-btn:hover {
+  background-color: #ff4500; /* Darker orange on hover */
+}
+
+#send-btn:focus {
+  outline: none; /* Removes default focus outline */
+  box-shadow: 0 0 10px rgba(255, 102, 0, 0.8); /* Adds glow effect when focused */
+}
+
+/* Hover effect for input fields */
+#user-input:hover, #language-input:hover {
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque on hover */
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5); /* Glow effect on hover */
+}
+
+#chatbox {
+  background-color: rgba(255, 255, 255, 0.8); /* Transparent white chatbox background */
+  border-radius: 15px;
+  padding: 20px;
+  max-height: 400px;
+  overflow-y: auto; /* Enables scrolling if chat messages overflow */
+  margin-bottom: 20px;
+  color: black;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Soft shadow around chatbox */
+}
+
+/* Chat messages style */
+.chat-message {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.chat-message strong {
+  color: #ff6600; /* Bright orange for message sender */
+}
+.home
+{ 
+  margin-top: 300px;
+  align-items: center;
+  
+}
+/* Base orange button style */
+.btn-orange {
+  background-color: #ff9800;  /* Orange background */
+  color: white;               /* White text */
+  padding: 12px 24px;         /* Padding for button size */
+  font-size: 16px;            /* Font size */
+  border: none;               /* Remove default border */
+  border-radius: 4px;         /* Rounded corners */
+  cursor: pointer;            /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+}
+.btn-white {
+  background-color: white;  /* Orange background */
+  color: orangered;               /* White text */
+  padding: 12px 24px;         /* Padding for button size */
+  font-size: 16px;            /* Font size */
+  border: none;               /* Remove default border */
+  border-radius: 4px;         /* Rounded corners */
+  cursor: pointer;            /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+}
+
+/* Hover effect */
+.btn-orange:hover {
+  background-color: #e68900;  /* Darker orange on hover */
+  transform: translateY(-2px); /* Slightly lift the button */
+}
+
+/* Active button effect (when pressed) */
+.btn-orange:active {
+  background-color: #cc7a00;  /* Even darker orange on press */
+  transform: translateY(0);   /* Remove the lift effect */
+}
+
+/* Add responsiveness for mobile devices */
+@media (max-width: 768px) {
+  .centered {
+    padding-top: 100px;
+    max-width: 90%; /* Adjust content width for smaller screens */
+  }
+  
+  #send-btn {
+    font-size: 1.1rem; /* Slightly smaller button font for mobile */
+  }
+
+  #user-input, #language-input {
+    font-size: 1.1rem;
+    padding: 12px;
+  }
+}
